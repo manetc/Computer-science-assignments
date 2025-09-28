@@ -4,7 +4,7 @@
 
 # Input the user's annual salary
 annual_salary = float(input("Enter your annual salary :"))
-monthly_salary = annual_salary/12  # Calculate their monthly salary
+monthly_salary = annual_salary/12  # Calculates their monthly salary
 # Input the user's portion of salary to be saved (the saving rate)
 portion_saved = float(input("Enter the portion of salary to be saved :"))
 # Input the total cost of the house
@@ -15,6 +15,7 @@ current_saving = 0
 r = 0.04 # Annual return of investment 
 months = 0
 
+# while the current savings are under the portion needed for down payment, keep saving 
 while current_saving < total_cost*portion_down_payment:
     if months % 12 == 0 : # Adds the annual return of investment to the savings
         current_saving = current_saving*(1+r)
@@ -79,12 +80,12 @@ semi_annual_raise = 0.07 # Semi-annual salary raise
 portion_down_payment = 0.25  # Portion needed for down payment
 r = 0.04  # Annual return on investments
 months = 36  # Number of months to save
-step = 0
+step = 0 # Number of steps in the bisection search
 
 # Function to calculate savings after 36 months given a savings rate
 def savings_after_months(portion_saved):
     savings = 0
-    monthly_salary = annual_salary / 12  # Calculate the user's monthly salary 
+    monthly_salary = annual_salary / 12  # Calculates the user's monthly salary 
     for month in range(1, months + 1):
         if month % 12 == 0 :  # Adds investment return
             savings += savings * r 
@@ -118,10 +119,11 @@ else:
 
 """
 Case 1 :
-With a starting salry in Lyon at 50000, it is not possible to pay the down payment in three years.
+With a starting salary in Lyon at 50000, it is not possible to pay the down payment in three years.
 Case 2 :
-With a starting salry in Lyon at 90000, the best savings rate is 0.7227 and the number of steps in the bisection search is 8.
+With a starting salary in Lyon at 90000, the best savings rate is 0.7227 and the number of steps in the bisection search is 8.
 Case 3 :
-With a starting salry in Lyon at 35000, it is not possible to pay the down payment in three years.
+With a starting salary in Lyon at 35000, it is not possible to pay the down payment in three years.
 """
+
 
